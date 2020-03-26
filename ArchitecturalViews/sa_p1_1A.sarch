@@ -90,7 +90,8 @@
 				f: mostrarMarcadores is_part_of sm: mostrarMapa;   
 				f: reubicarResultadoBusqueda is_part_of sm: actualizarMapa;   
 				f: filtroUbicacion is_part_of sm: crearFiltro;   
-				f: filtroTienda is_part_of sm: crearFiltro;   
+				f: filtroTienda is_part_of sm: crearFiltro;
+				f: filtroTipoProducto is_part_of sm: crearFiltro;
 				f: registrarse is_part_of sm: crearCuenta;   
 				f: listarConfiguraciones is_part_of sm: leerCuenta;    
 				f: listarInformacion is_part_of sm: leerCuenta;   

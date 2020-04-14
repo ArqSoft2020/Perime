@@ -139,15 +139,14 @@
 			relational data_model ubicacion_microservice {  
   
 				elements {  
-					data_entity ubicacion_user {  
+					data_entity ubicacion {  
 						attributes {  
 							int id_user;   
 							string nomb_user;  
 							int dir_user;  
 							int id_publicacion;  
 							string nomb_publicacion;  
-							date fecha;  
-							date hora;  
+							date fecha;    
 						}  
 					}  
 				}  

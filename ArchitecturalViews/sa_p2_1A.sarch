@@ -1,0 +1,299 @@
+﻿architecture {  	  
+    
+	software_system: Perime;    
+	author: Macorreag_Kavanegasm_Luaavilagu_Miagomez_Cfpinedao_Daandradec;  
+	    
+	architectural_views {    
+		    
+		decomposition_view ::    
+			    
+			elements {    
+				module chats;    
+				module mapa;    
+				module buscador;   
+				module cuenta;   
+				module publicaciones;   
+				submodule crearChat;    
+				submodule leerChat;    
+				submodule actualizarChat;    
+				submodule eliminarChat;    
+				submodule mostrarMapa;    
+				submodule actualizarMapa;    
+				submodule crearCuenta;    
+				submodule crearFiltro;    
+				submodule leerCuenta;   
+				submodule actualizarCuenta;    
+				submodule crearPublicacion;    
+				submodule leerPublicacion;    
+				submodule actualizarPublicacion;   
+				submodule eliminarPublicacion;   
+				functionality eliminarTexto;    
+				functionality enviarTexto;    
+				functionality subirFoto;    
+				functionality listarConversaciones;    
+				functionality obtenerContenidoConversacion;    
+				functionality notificarMensaje;    
+				functionality borradoManualConversacion;    
+				functionality borradoAutomaticoConversacion;    
+				functionality mostrarMarcadores;    
+				functionality mostrarMapaCalor;    
+				functionality reubicarResultadoBusqueda;    
+				functionality filtroUbicacion;    
+				functionality filtroTienda;    
+				functionality filtroTipoProducto;    
+				functionality registrarse;    
+				functionality listarConfiguraciones;    
+				functionality listarInformacion;    
+				functionality autenticacion;    
+				functionality modificarInformacion;    
+				functionality subirFotoCuenta;    
+				functionality anadirDescripcion;    
+				functionality anadirImagenPublicacion;    
+				functionality anadirCaducidad;    
+				functionality anadirUbicacion;    
+				functionality anadirCategorias;    
+				functionality seleccionarProductoYaExistente;    
+				functionality listarPublicacion;    
+				functionality obtenerContenidoPublicacion;    
+				functionality editarDescripcion;    
+				functionality cambiarImagen;   
+				functionality cambiarPrecio;    
+				functionality editarFechaCaducidad;   
+				functionality borradoManualPublicacion;    
+				functionality borradoAutomaticoPublicacion;    
+   
+			}    
+			    
+			relations {    
+				sm: crearChat is_part_of m: chats;    
+				sm: leerChat is_part_of m: chats;    
+				sm: actualizarChat is_part_of m: chats;     
+				sm: eliminarChat is_part_of m: chats;     
+				sm: mostrarMapa is_part_of m: mapa;    
+				sm: actualizarMapa is_part_of m: mapa;    
+				sm: crearFiltro is_part_of m: buscador;    
+				sm: crearCuenta is_part_of m: cuenta;    
+				sm: leerCuenta is_part_of m: cuenta;   
+				sm: actualizarCuenta is_part_of m: cuenta;   
+				sm: crearPublicacion is_part_of m: publicaciones;    
+				sm: leerPublicacion is_part_of m: publicaciones;   
+				sm: actualizarPublicacion is_part_of m: publicaciones;    
+				sm: eliminarPublicacion is_part_of m: publicaciones; 				   
+				f: eliminarTexto is_part_of sm: crearChat;    
+				f: enviarTexto is_part_of sm: crearChat;    
+				f: subirFoto is_part_of sm: crearChat;    
+				f: listarConversaciones is_part_of sm: leerChat;    
+				f: obtenerContenidoConversacion is_part_of sm: leerChat;   
+				f: notificarMensaje is_part_of sm: actualizarChat;    
+				f: borradoManualConversacion is_part_of sm: eliminarChat;    
+				f: borradoAutomaticoConversacion is_part_of sm: eliminarChat;    
+				f: mostrarMarcadores is_part_of sm: mostrarMapa;    
+				f: reubicarResultadoBusqueda is_part_of sm: actualizarMapa;    
+				f: filtroUbicacion is_part_of sm: crearFiltro;    
+				f: filtroTienda is_part_of sm: crearFiltro; 
+				f: filtroTipoProducto is_part_of sm: crearFiltro; 
+				f: registrarse is_part_of sm: crearCuenta;    
+				f: listarConfiguraciones is_part_of sm: leerCuenta;     
+				f: listarInformacion is_part_of sm: leerCuenta;    
+				f: autenticacion is_part_of sm: leerCuenta;    
+				f: modificarInformacion is_part_of sm: actualizarCuenta;   
+				f: subirFotoCuenta is_part_of sm: actualizarCuenta;   
+				f: anadirDescripcion is_part_of sm: crearPublicacion;   
+				f: anadirImagenPublicacion is_part_of sm: crearPublicacion;   
+				f: anadirCaducidad is_part_of sm: crearPublicacion;   
+				f: anadirUbicacion is_part_of sm: crearPublicacion;   
+				f: anadirCategorias is_part_of sm: crearPublicacion;   
+				f: seleccionarProductoYaExistente is_part_of sm: crearPublicacion;   
+				f: listarPublicacion is_part_of sm: leerPublicacion;   
+				f: obtenerContenidoPublicacion is_part_of sm: leerPublicacion;   
+				f: editarDescripcion is_part_of sm: actualizarPublicacion;   
+				f: cambiarImagen is_part_of sm: actualizarPublicacion;   
+				f: cambiarPrecio is_part_of sm: actualizarPublicacion;   
+				f: editarFechaCaducidad is_part_of sm: actualizarPublicacion;   
+				f: borradoManualPublicacion is_part_of sm: eliminarPublicacion;   
+				f: borradoAutomaticoPublicacion is_part_of sm: eliminarPublicacion;   
+			}    
+		 
+		::	  
+		 
+		data_model_view :: 
+			relational data_model perime_user_db { 
+				elements { 
+					data_entity user { 
+						attributes { 
+							int id; 
+							string username; 
+							string passhash; 
+							string address; 
+							string email; 
+							int cellphone; 
+								} 
+							} 
+							 
+						} 
+ 
+						relations { 
+						} 
+			} 
+			 
+			relational data_model ubicacion_microservice {  
+  
+				elements {  
+					data_entity ubicacion_user {  
+						attributes {  
+							int id_user;   
+							string nomb_user;  
+							int dir_user;  
+							int id_publicacion;  
+							string nomb_publicacion;  
+							date fecha;  
+							date hora;  
+						}  
+					}  
+				}  
+  
+				relations {  
+				}  
+  
+			}  
+			 
+			relational data_model busqueda_microservice { 
+ 
+				elements { 
+					data_entity categoria { 
+						attributes { 
+							int id; 
+							string nombrecategoria; 
+							string tipocategoria; 
+						} 
+					} 
+					data_entity producto { 
+						attributes { 
+							int id; 
+							int categoriaid; 
+							string nombreproducto; 
+							string descripcion;					 
+						} 
+					} 
+				} 
+ 
+				relations { 
+					one_to_many (categoria, producto);					 
+				} 
+ 
+			} 
+			 
+			relational data_model multimedia_microservice { 
+ 
+				elements { 
+					data_entity multimedia { 
+						attributes { 
+							int id; 
+							int multiable_id; 
+							string multiable_type; 
+							string multimedia_path; 
+							datetime timestamps; 
+						} 
+					} 
+				} 
+ 
+				relations { 
+					 
+				} 
+ 
+			} 
+			 
+			nosql data_model publication {  
+  
+	            elements {  
+	  
+	                data_entity publication {  
+	                    attributes {  
+	                        int id_publication;  
+	                        string title;  
+	                        string description;  
+	                        bool state_publication;  
+	                        string contact_information;  
+	                        int id_image;  
+	                        int stock;  
+	                        datetime expiration_date;                              
+	                        int price;  
+	                        string categories ;  
+	                    }  
+	                }                 
+  
+            	} 
+  
+        	} 
+        	 
+        	nosql data_model publication {  
+  
+		        elements {  
+		  
+		            data_entity comments{  
+		                attributes {  
+		                        int id_comments;  
+		                        int id_publication;  
+		                        string text_comment;  
+		                        datetime date_comment;  
+		                        int id_user;  
+		                }  
+		            }  
+		  
+		        }  
+ 
+    		}  
+			 
+		:: 
+ 
+		component_and_connector_view ::   
+   
+			elements {   
+ 
+				component_types {   
+					frontend;   
+					backend;   
+					database;   
+					external;   
+				}   
+ 
+				component frontend perime_gui_movil;   
+				component frontend perime_gui_web;   
+				component backend perime_cuenta;   
+				component backend perime_chat;   
+				component backend perime_publicacion;   
+				component backend perime_busqueda;   
+				component database perime_cuenta_chat_db;   
+				component database perime_publicacion_db;   
+				component external perime_map_sdk;   
+				component external perime_losprecios_sdk;   
+				connector rest_connector;   
+				connector database_connector;   
+				connector external_connector;   
+			}   
+	 
+			relations {   
+				attachment (rest_connector: perime_gui_movil, perime_cuenta);   
+				attachment (rest_connector: perime_gui_movil, perime_chat);   
+				attachment (rest_connector: perime_gui_movil, perime_publicacion);   
+				attachment (rest_connector: perime_gui_movil, perime_busqueda);   
+				attachment (rest_connector: perime_gui_web, perime_cuenta);   
+				attachment (rest_connector: perime_gui_web, perime_chat);   
+				attachment (rest_connector: perime_gui_web, perime_publicacion);   
+				attachment (rest_connector: perime_gui_web, perime_busqueda);   
+				attachment (database_connector: perime_cuenta, perime_cuenta_chat_db);   
+				attachment (database_connector: perime_chat, perime_cuenta_chat_db);   
+				attachment (database_connector: perime_publicacion, perime_publicacion_db);   
+				attachment (database_connector: perime_busqueda, perime_publicacion_db);   
+				attachment (external_connector: perime_map_sdk, perime_gui_movil);   
+				attachment (external_connector: perime_map_sdk, perime_gui_web);   
+				attachment (external_connector: perime_map_sdk, perime_busqueda);   
+				attachment (external_connector: perime_losprecios_sdk, perime_busqueda);   
+			}   
+	::   
+	 
+	 
+	} 
+	 
+	 
+}    

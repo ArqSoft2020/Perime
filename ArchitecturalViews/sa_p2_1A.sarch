@@ -7,7 +7,7 @@ architecture {
 		    
 		decomposition_view ::    
 			    
-			elements {       
+			elements {  
 				module mapa;    
 				module buscador;   
 				module cuenta;   

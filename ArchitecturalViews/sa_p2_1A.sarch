@@ -1,4 +1,4 @@
-﻿architecture {  	  
+architecture {  	  
     
 	software_system: Perime;    
 	author: Macorreag_Kavanegasm_Luaavilagu_Miagomez_Cfpinedao_Daandradec;  
@@ -7,16 +7,11 @@
 		    
 		decomposition_view ::    
 			    
-			elements {    
-				module chats;    
+			elements {       
 				module mapa;    
 				module buscador;   
 				module cuenta;   
-				module publicaciones;   
-				submodule crearChat;    
-				submodule leerChat;    
-				submodule actualizarChat;    
-				submodule eliminarChat;    
+				module publicaciones;      
 				submodule mostrarMapa;    
 				submodule actualizarMapa;    
 				submodule crearCuenta;    
@@ -26,15 +21,7 @@
 				submodule crearPublicacion;    
 				submodule leerPublicacion;    
 				submodule actualizarPublicacion;   
-				submodule eliminarPublicacion;   
-				functionality eliminarTexto;    
-				functionality enviarTexto;    
-				functionality subirFoto;    
-				functionality listarConversaciones;    
-				functionality obtenerContenidoConversacion;    
-				functionality notificarMensaje;    
-				functionality borradoManualConversacion;    
-				functionality borradoAutomaticoConversacion;    
+				submodule eliminarPublicacion;     
 				functionality mostrarMarcadores;    
 				functionality mostrarMapaCalor;    
 				functionality reubicarResultadoBusqueda;    
@@ -64,11 +51,7 @@
    
 			}    
 			    
-			relations {    
-				sm: crearChat is_part_of m: chats;    
-				sm: leerChat is_part_of m: chats;    
-				sm: actualizarChat is_part_of m: chats;     
-				sm: eliminarChat is_part_of m: chats;     
+			relations {        
 				sm: mostrarMapa is_part_of m: mapa;    
 				sm: actualizarMapa is_part_of m: mapa;    
 				sm: crearFiltro is_part_of m: buscador;    
@@ -78,15 +61,7 @@
 				sm: crearPublicacion is_part_of m: publicaciones;    
 				sm: leerPublicacion is_part_of m: publicaciones;   
 				sm: actualizarPublicacion is_part_of m: publicaciones;    
-				sm: eliminarPublicacion is_part_of m: publicaciones; 				   
-				f: eliminarTexto is_part_of sm: crearChat;    
-				f: enviarTexto is_part_of sm: crearChat;    
-				f: subirFoto is_part_of sm: crearChat;    
-				f: listarConversaciones is_part_of sm: leerChat;    
-				f: obtenerContenidoConversacion is_part_of sm: leerChat;   
-				f: notificarMensaje is_part_of sm: actualizarChat;    
-				f: borradoManualConversacion is_part_of sm: eliminarChat;    
-				f: borradoAutomaticoConversacion is_part_of sm: eliminarChat;    
+				sm: eliminarPublicacion is_part_of m: publicaciones; 				     
 				f: mostrarMarcadores is_part_of sm: mostrarMapa;    
 				f: reubicarResultadoBusqueda is_part_of sm: actualizarMapa;    
 				f: filtroUbicacion is_part_of sm: crearFiltro;    
@@ -295,4 +270,4 @@
 	} 
 	 
 	 
-}    
+}
